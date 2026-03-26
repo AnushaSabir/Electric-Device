@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Phone, Mail, Zap, Shield, Star, Lightbulb, Users, ThumbsUp, Leaf } from "lucide-react";
+import { Check, Mail, Zap, Shield, Star, Lightbulb, Users, ThumbsUp, Leaf } from "lucide-react";
 
 export default function Home() {
   const fadeIn = {
@@ -31,9 +31,6 @@ export default function Home() {
               <span className="text-2xl font-extrabold tracking-tight">EXECUTOR <span className="text-[#EA5455]">Killer</span></span>
             </div>
             <div className="hidden md:flex gap-6 items-center">
-              <a href="tel:03222461264" className="text-[#002B5B] hover:text-[#EA5455] transition-colors flex items-center gap-2 font-semibold">
-                <Phone className="h-4 w-4" /> 0322-2461264
-              </a>
               <a href="mailto:electricmosquitokiller@gmail.com" className="bg-[#002B5B] hover:bg-[#001D3D] text-white transition-colors flex items-center gap-2 font-semibold px-5 py-2.5 rounded-full shadow-md">
                 <Mail className="h-4 w-4" /> Email Us
               </a>
@@ -333,15 +330,6 @@ export default function Home() {
             <h3 className="text-3xl font-extrabold text-[#002B5B] mb-8">Contact to Order Now:</h3>
             
             <div className="flex flex-col gap-6">
-              <a href="tel:03222461264" className="flex items-center justify-center gap-4 text-3xl md:text-5xl font-black text-[#002B5B] hover:text-[#EA5455] transition-colors group">
-                <div className="bg-[#002B5B]/5 p-4 rounded-full group-hover:bg-[#EA5455]/10 transition-colors">
-                  <Phone className="w-10 h-10 md:w-12 md:h-12 text-[#EA5455]" />
-                </div>
-                0322-2461264
-              </a>
-              
-              <div className="h-px bg-gray-200 w-1/2 mx-auto my-4" />
-              
               <a href="mailto:electricmosquitokiller@gmail.com" className="flex items-center justify-center gap-4 text-xl md:text-2xl font-bold text-gray-600 hover:text-[#002B5B] transition-colors group">
                 <div className="bg-gray-50 p-3 rounded-full group-hover:bg-[#002B5B]/5 transition-colors">
                   <Mail className="w-6 h-6 text-gray-400 group-hover:text-[#002B5B] transition-colors" />
