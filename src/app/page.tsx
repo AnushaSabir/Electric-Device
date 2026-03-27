@@ -326,7 +326,7 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 className="text-xl text-blue-100 font-medium"
              >
-                Secure every room in your house. Get our exclusive Pack of 5 at an unbeatable wholesale price.
+                Secure every room in your house. Get our exclusive Pack of 6 at an unbeatable wholesale price.
              </motion.p>
           </div>
 
@@ -343,7 +343,7 @@ export default function Home() {
                 <div className="text-blue-200 text-sm font-semibold uppercase tracking-wider">Bundle Offer</div>
               </div>
               
-              <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Pack of 5 Devices</h3>
+              <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Pack of 6 Devices</h3>
               <p className="text-blue-100 text-lg mb-8 leading-relaxed">
                 Perfect for multi-room homes, offices, or gifting to loved ones. Equip your entire space with safe, quiet mosquito protection.
               </p>
@@ -351,16 +351,16 @@ export default function Home() {
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-8 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-[30px] -mr-16 -mt-16" />
                 <div className="flex flex-wrap items-end gap-x-4 gap-y-2 mb-2 relative z-10">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-[#EA5455]">Rs. 6,000</span>
-                  <span className="text-xl text-blue-200 line-through pb-1">Rs. 10,000</span>
+                  <span className="text-4xl sm:text-5xl font-extrabold text-[#EA5455]">Rs. 7,500</span>
+                  <span className="text-xl text-blue-200 line-through pb-1">Rs. 12,000</span>
                 </div>
                 <div className="text-white font-bold text-lg relative z-10">
-                  That's just Rs. 1,200 per piece!
+                  That's just Rs. 1,250 per piece!
                 </div>
               </div>
               
               <ul className="space-y-4 mb-8">
-                {['Cover up to 5 individual rooms', 'One simple delivery package', 'Maximum discount guaranteed', 'Stock limits apply!'].map((item, i) => (
+                {['Cover up to 6 individual rooms', 'One simple delivery package', 'Maximum discount guaranteed', 'Stock limits apply!'].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-blue-50 font-medium tracking-wide">
                     <div className="bg-[#EA5455] p-1.5 rounded-full shadow-md flex-shrink-0"><Check className="h-3 w-3 text-white font-bold" /></div>
                     {item}
@@ -381,7 +381,7 @@ export default function Home() {
             >
               <div className="absolute top-6 right-6 z-20 bg-[#EA5455] text-white w-24 h-24 sm:w-28 sm:h-28 rounded-full flex flex-col items-center justify-center font-bold text-center shadow-[0_10px_30px_rgba(234,84,85,0.4)] transform rotate-12 border-4 border-white">
                 <span className="text-[10px] sm:text-xs uppercase opacity-90">Only</span>
-                <span className="text-xl sm:text-2xl leading-none my-1 shadow-sm">1200</span>
+                <span className="text-xl sm:text-2xl leading-none my-1 shadow-sm">1250</span>
                 <span className="text-[10px] sm:text-xs opacity-90">/ piece</span>
               </div>
               
@@ -391,7 +391,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="relative z-10 w-full h-full flex justify-center items-center"
               >
-                <img src="/deal-image.png" alt="Pack of 5 Deal" className="w-full max-w-[450px] h-auto object-contain drop-shadow-2xl rounded-2xl" onError={(e) => {
+                <img src="/deal-image.png" alt="Pack of 6 Deal" className="w-full max-w-[450px] h-auto object-contain drop-shadow-2xl rounded-2xl" onError={(e) => {
                    e.currentTarget.style.display = 'none';
                    if (e.currentTarget.parentElement?.nextElementSibling) {
                        (e.currentTarget.parentElement.nextElementSibling as HTMLElement).style.display = 'flex';
@@ -401,7 +401,7 @@ export default function Home() {
               <div className="absolute inset-0 flex-col items-center justify-center p-8 text-center text-gray-500 bg-gray-50 hidden md:flex">
                  <Star className="w-16 h-16 mx-auto mb-4 text-gray-300" />
                  <p className="font-bold text-xl mb-2">Bundle Image Needed</p>
-                 <p className="text-sm">Save your 5-pack image as <br/>`public/deal-image.png`</p>
+                 <p className="text-sm">Save your 6-pack image as <br/>`public/deal-image.png`</p>
               </div>
             </motion.div>
             
