@@ -150,8 +150,15 @@ export default function Home() {
             >
 
               
-              <div className="bg-white/60 backdrop-blur-xl border border-white rounded-[2rem] p-4 sm:p-6 shadow-2xl relative flex flex-col">
+              <div className="bg-white/60 backdrop-blur-xl border border-white rounded-[2rem] p-4 sm:p-6 shadow-2xl relative flex flex-col mt-4 sm:mt-0">
                 
+                {/* Price Tag */}
+                <div className="absolute -top-6 -right-2 sm:-top-8 sm:-right-8 z-30 bg-[#EA5455] text-white w-20 h-20 sm:w-28 sm:h-28 rounded-full flex flex-col items-center justify-center font-bold text-center shadow-[0_10px_30px_rgba(234,84,85,0.4)] transform rotate-12 border-[3px] sm:border-4 border-white">
+                  <span className="text-[9px] sm:text-xs uppercase opacity-90">Only</span>
+                  <span className="text-lg sm:text-2xl leading-none my-0.5 sm:my-1 shadow-sm">1500</span>
+                  <span className="text-[9px] sm:text-xs opacity-90">/ piece</span>
+                </div>
+
                 {/* 3D Image Carousel */}
                 <div className="w-full h-[350px] sm:h-[450px] relative flex justify-center items-center mb-6">
                   <AnimatePresence>
@@ -358,7 +365,7 @@ export default function Home() {
 
 
 
-      {/* Features Detail Section */}
+      {/* Combined Features & Benefits Section */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -369,7 +376,7 @@ export default function Home() {
                viewport={{ once: true }}
                className="text-3xl md:text-5xl font-extrabold text-[#002B5B] mb-6"
              >
-               How It Works
+               Why You Need It & How It Works
              </motion.h2>
              <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -382,84 +389,20 @@ export default function Home() {
              </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="flex flex-col gap-16">
             
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="order-2 lg:order-1 relative"
-            >
-              <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[4/5] flex items-center justify-center">
-                 {/* USING THE USER PROVIDED DETAILS IMAGE */}
-                 <img src="/details-image-png.jpeg" alt="Device Features" className="w-full h-full object-cover" onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    if (e.currentTarget.nextElementSibling) {
-                        (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
-                    }
-                 }} />
-                 <div className="absolute inset-0 flex-col items-center justify-center p-8 text-center text-gray-500 bg-gray-100 hidden">
-                    <Shield className="w-16 h-16 mx-auto mb-4 text-gray-300" />
-                    <p className="font-bold text-xl mb-2">Details Image Needed</p>
-                    <p className="text-sm">Save your 2nd image as <br/>`public/details-image.png`</p>
-                 </div>
-              </div>
+            {/* Top Row: Images */}
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
               
-
-            </motion.div>
-
-            <div className="order-1 lg:order-2">
-              <div className="grid sm:grid-cols-2 gap-6">
-                {[
-                  { icon: Zap, title: "Switch Button", desc: "Easy one-touch operation. Turn it on and let it do the work instantly." },
-                  { icon: Lightbulb, title: "LED Lamp Beads", desc: "Attracts mosquitoes with highly effective, specially calibrated UV light." },
-                  { icon: Zap, title: "High-Voltage Grid", desc: "Instantly zaps and eliminates pests upon contact with the internal grid." },
-                  { icon: Shield, title: "PVC Protective Cover", desc: "100% safe exterior grid prevents accidental shocks for kids and pets." }
-                ].map((item, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 + (i * 0.1) }}
-                    className="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300 hover:border-[#002B5B]/30"
-                  >
-                    <div className="bg-[#002B5B]/10 w-14 h-14 rounded-2xl flex items-center justify-center mb-5 text-[#002B5B]">
-                      <item.icon className="w-7 h-7" />
-                    </div>
-                    <h3 className="text-xl font-bold text-[#002B5B] mb-2">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-slate-50 border-t border-gray-200">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.h2 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               className="text-3xl md:text-5xl font-extrabold text-[#002B5B] mb-16 pt-8"
-             >
-               Why Every Home Needs This
-             </motion.h2>
-
-             <div className="flex flex-col lg:flex-row gap-12 items-center pb-8 border-b-0">
-               <motion.div 
-                 initial={{ opacity: 0, x: -50 }}
-                 whileInView={{ opacity: 1, x: 0 }}
+              {/* Image 1: Why Every Home Needs This (Mosquitoes Killed) - Requested to be ABOVE */}
+              <motion.div 
+                 initial={{ opacity: 0, scale: 0.95 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
                  viewport={{ once: true }}
-                 transition={{ duration: 0.8 }}
-                 className="flex-1 w-full max-w-lg mx-auto"
+                 transition={{ duration: 0.6 }}
+                 className="w-full relative"
                >
-                 <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[4/3] flex items-center justify-center relative">
+                 <div className="rounded-3xl overflow-hidden shadow-xl border-2 border-gray-100 bg-white aspect-[4/3] sm:aspect-video md:aspect-[4/3] flex items-center justify-center relative">
                    <img src="/mosquitoes-image-png.jpeg" alt="Mosquitoes Killed" className="w-full h-full object-cover" onError={(e) => {
                       e.currentTarget.style.display = 'none';
                       if (e.currentTarget.nextElementSibling) {
@@ -469,40 +412,108 @@ export default function Home() {
                    <div className="absolute inset-0 flex-col items-center justify-center p-8 text-center text-gray-500 bg-gray-100 hidden">
                       <Zap className="w-16 h-16 mx-auto mb-4 text-gray-300" />
                       <p className="font-bold text-xl mb-2">3rd Image Needed</p>
-                      <p className="text-sm">Save your 3rd image as <br/>`public/mosquitoes-image.png`</p>
+                      <p className="text-sm">Save your 3rd image as <br/>`public/mosquitoes-image-png.jpeg`</p>
                    </div>
                  </div>
-                 
-
                </motion.div>
 
-               <div className="flex-1 grid gap-6">
-                 {[
-                    { icon: Users, title: "Family Safe", desc: "No poisonous sprays, no smoke, no chemicals. Completely safe to use around babies and pregnant women." },
-                    { icon: Zap, title: "Energy Saving", desc: "Consumes very little electricity. You can leave it on all night without worrying about your electric bill." },
-                    { icon: Shield, title: "Durable Design", desc: "Made with high-quality, sturdy materials designed to last for years of continuous use." }
-                 ].map((benefit, i) => (
-                    <motion.div
-                       key={i}
-                       initial={{ opacity: 0, y: 20 }}
-                       whileInView={{ opacity: 1, y: 0 }}
-                       viewport={{ once: true }}
-                       transition={{ delay: 0.2 * i }}
-                       className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start text-left gap-4"
+               {/* Image 2: How It Works (Details Image) - Requested to be BELOW Why Every Home Needs Image */}
+               <motion.div 
+                 initial={{ opacity: 0, scale: 0.95 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 0.6, delay: 0.2 }}
+                 className="relative"
+               >
+                 <div className="rounded-3xl overflow-hidden shadow-xl border-2 border-gray-100 bg-white aspect-[4/3] sm:aspect-video md:aspect-[4/3] flex items-center justify-center relative">
+                    <img src="/details-image-png.jpeg" alt="Device Features" className="w-full h-full object-cover" onError={(e) => {
+                       e.currentTarget.style.display = 'none';
+                       if (e.currentTarget.nextElementSibling) {
+                           (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
+                       }
+                    }} />
+                    <div className="absolute inset-0 flex-col items-center justify-center p-8 text-center text-gray-500 bg-gray-100 hidden">
+                       <Shield className="w-16 h-16 mx-auto mb-4 text-gray-300" />
+                       <p className="font-bold text-xl mb-2">Details Image Needed</p>
+                       <p className="text-sm">Save your 2nd image as <br/>`public/details-image-png.jpeg`</p>
+                    </div>
+                 </div>
+               </motion.div>
+
+            </div>
+
+            {/* Bottom Row: Texts */}
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 pt-8 border-t border-gray-100">
+              
+              {/* Text 1: How It Works (Requested to be first in text row) */}
+              <div>
+                <h3 className="text-2xl font-extrabold text-[#002B5B] mb-8 inline-flex items-center gap-2">
+                  <span className="bg-[#EA5455] w-2 h-6 rounded-full inline-block"></span>
+                  How It Works
+                </h3>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {[
+                    { icon: Zap, title: "Switch Button", desc: "Easy one-touch operation. Turn it on and let it do the work instantly." },
+                    { icon: Lightbulb, title: "LED Lamp Beads", desc: "Attracts mosquitoes with highly effective, specially calibrated UV light." },
+                    { icon: Zap, title: "High-Voltage Grid", desc: "Instantly zaps and eliminates pests upon contact with the internal grid." },
+                    { icon: Shield, title: "PVC Protective Cover", desc: "100% safe exterior grid prevents accidental shocks for kids and pets." }
+                  ].map((item, i) => (
+                    <motion.div 
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 * i }}
+                      className="glass-card p-5 rounded-2xl hover:-translate-y-1 transition-transform duration-300 shadow-sm border border-gray-50"
                     >
-                       <div className="bg-[#EA5455]/10 p-4 rounded-full flex-shrink-0">
-                          <benefit.icon className="w-6 h-6 text-[#EA5455]" />
-                       </div>
-                       <div>
-                         <h3 className="text-xl font-bold text-[#002B5B] mb-2">{benefit.title}</h3>
-                         <p className="text-gray-600 font-medium text-sm">{benefit.desc}</p>
-                       </div>
+                      <div className="bg-[#002B5B]/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-[#002B5B]">
+                        <item.icon className="w-6 h-6" />
+                      </div>
+                      <h4 className="text-lg font-bold text-[#002B5B] mb-2">{item.title}</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                     </motion.div>
-                 ))}
-               </div>
-             </div>
-         </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Text 2: Why Every Home Needs This */}
+              <div>
+                <h3 className="text-2xl font-extrabold text-[#002B5B] mb-8 inline-flex items-center gap-2">
+                  <span className="bg-[#EA5455] w-2 h-6 rounded-full inline-block"></span>
+                  Why Every Home Needs This
+                </h3>
+                <div className="grid gap-5">
+                  {[
+                     { icon: Users, title: "Family Safe", desc: "No poisonous sprays, no smoke, no chemicals. Completely safe to use around babies and pregnant women." },
+                     { icon: Zap, title: "Energy Saving", desc: "Consumes very little electricity. You can leave it on all night without worrying about your electric bill." },
+                     { icon: Shield, title: "Durable Design", desc: "Made with high-quality, sturdy materials designed to last for years of continuous use." }
+                  ].map((benefit, i) => (
+                     <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 * i }}
+                        className="bg-slate-50 p-5 rounded-2xl shadow-sm border border-gray-100 flex items-start text-left gap-4"
+                     >
+                        <div className="bg-[#EA5455]/10 p-3 rounded-full flex-shrink-0 mt-1">
+                           <benefit.icon className="w-5 h-5 text-[#EA5455]" />
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-[#002B5B] mb-1">{benefit.title}</h4>
+                          <p className="text-gray-600 font-medium text-sm">{benefit.desc}</p>
+                        </div>
+                     </motion.div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </section>
+
+
 
       {/* CTA Section */}
       <section id="order" className="py-32 relative overflow-hidden bg-[#002B5B]">
